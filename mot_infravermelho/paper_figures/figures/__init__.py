@@ -1,0 +1,1 @@
+# Empty file to make figures a package.

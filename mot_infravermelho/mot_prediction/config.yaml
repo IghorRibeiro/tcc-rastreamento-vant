@@ -1,0 +1,163 @@
+# =============================================================================
+# mot_prediction/config.yaml -- configuracao UNICA do experimento
+#
+# Caminhos relativos sao resolvidos a partir da RAIZ do projeto LAFusion
+# (a pasta que contem mot_prediction/). Caminhos absolutos e ~ tambem valem.
+# Nada aqui aponta para escrita fora de mot_prediction/results/.
+# =============================================================================
+
+seed: 42                      # random / numpy / torch
+device: auto                  # auto -> mps no Apple M2 (cuda > mps > cpu)
+
+paths:
+  lafusion_root: "."
+  sige_repo: "../sot_visivel/hybrid-uav-tracking-prediction"   # no projeto original: publicar_github/hybrid-uav-tracking-prediction
+  # Track 3 (os mesmos de src/inference/common.py; o check_setup confere)
+  track3_label_root: "dataset/MultiUAV_Train/original_label_file"
+  track3_video_root: "dataset/MultiUAV_Train/TrainVideos"
+  track3_yolo_val_images: "dataset/dataset_yolo/images/val"   # conjunto de deteccao (stride 4), so para o check
+  mot_eval_dir: "runs/mot_eval"                               # somente leitura
+  manifest: "audit/validated_runs/run_manifest.json"          # somente leitura
+  paths_txt: "paths.txt"                                      # opcional; o check_setup confere cada caminho listado
+  results: "mot_prediction/results"
+  logs: "mot_prediction/logs"
+
+weights:
+  baseline: "weights/best.pt"                 # YOLO26n base do LAFusion (linha de base)
+  hardmining: "weights/best_hardmining.pt"    # YOLO26n HardMining (HIT-Tracker)
+  sige_dut: "publicar_github/hybrid-uav-tracking-prediction/pesos_treinados/yolo26n_dut_best.pt"
+
+track3:
+  frame_w: 640
+  frame_h: 512
+  fps_declared: 25            # README do LAFusion e artigo; o check_setup mede nos .mp4
+  iou_threshold: 0.5          # max_iou do evaluate_mot.py (distancia 1-IoU <= 0,5)
+
+# -----------------------------------------------------------------------------
+# Trajetorias ja salvas (Experimento A). O check_setup avalia cada candidato e
+# escolhe o PRIMEIRO cujas metricas por sequencia reproduzem o resumo publicado
+# (mot_summary_*.csv). Motivo: runs/mot_eval/UAV*_botsort.txt foi regravado em
+# 03/08 e hoje da 75,44% MOTA (audit/validated_runs), enquanto o artigo usa
+# 75,9% -- ver ASSUMPTIONS.md, A-02.
+# -----------------------------------------------------------------------------
+trajectories:
+  baseline:
+    candidates: ["GMC_noReID", "botsort"]
+    published_summary: "runs/mot_eval/mot_summary_botsort.csv"
+    published_overall: {mota: 75.9, idf1: 71.2, ids: 2327}
+  hit:
+    candidates: ["hardmining_sahi512_flit_nsa"]
+    published_summary: "runs/mot_eval/mot_summary_hardmining_sahi512_flit_nsa.csv"
+    published_overall: {mota: 79.9, idf1: 82.7, ids: 494}
+  per_sequence_tolerance: 1.0e-6   # |mota|, |idf1| e IDs por sequencia
+  overall_tolerance_pp: 0.05
+
+# -----------------------------------------------------------------------------
+# Predicao (Experimento A e avaliacao do B). Kalman = uav_common.py do SIGE.
+# -----------------------------------------------------------------------------
+prediction:
+  horizons: [5, 10, 15, 30]   # deve ser igual a uav_common.HORIZONS (conferido)
+  dampings: [1.0, 0.95]       # persistente e amortecido
+  correspondences: ["clear", "idf1"]   # primaria e secundaria (HYPOTHESES.md 2.2)
+  bootstrap_n: 10000
+  bootstrap_seed: 2026
+
+# -----------------------------------------------------------------------------
+# Experimento B -- arquitetura hibrida no MOT (configuracao principal)
+# -----------------------------------------------------------------------------
+hybrid:
+  name: "hybrid_csrt_n15"
+  detector_weights: baseline        # chave de 'weights'; pareado com a linha de base
+  n_red: 15
+  local_tracker: csrt               # csrt | kcf | mosse | medianflow
+  init_conf: 0.50                   # SIGE: --init-conf (nascimento / reativacao)
+  switch_conf: 0.70                 # SIGE: --switch-conf (reancoragem)
+  det_conf: 0.50                    # confianca da chamada ao detector (= menor limiar usado)
+  association:                      # custo GM do HIT-Tracker (robust_flit_association.py)
+    gamma: 0.55
+    match_thresh: 0.80              # botsort.yaml: match_thresh
+    fuse_score: true                # botsort.yaml: fuse_score
+    proximity_thresh: 0.50          # botsort.yaml (so usado com ReID; mantido por fidelidade)
+  lifecycle:
+    max_lost_frames: 30             # trilha perdida pode ser reativada por ate 30 quadros (= track_buffer)
+    max_unconfirmed_frames: 30      # trilha ativa sem deteccao associada por >= 30 quadros morre
+    detect_when_empty: true         # sem trilhas ativas -> detecta em todo quadro (SIGE: tracker is None)
+    redetect_on_failure: false      # true = detecta no quadro seguinte a qualquer falha (variante)
+  sahi:
+    enabled: false
+    slice: 512
+    overlap: 0.20
+  warmup_calls: 2
+
+# Rodadas de referencia com deteccao em TODOS os quadros (tempo por quadro)
+reference:
+  baseline:
+    name: "baseline_ref"
+    weights: baseline
+    tracker_cfg: "botsort.yaml"
+    conf: 0.25
+  hit:
+    name: "hit_ref"
+    weights: hardmining
+    tracker_cfg: "botsort.yaml"
+    conf: 0.25
+    sahi_slice: 512
+    sahi_overlap: 0.20
+    gamma: 0.55
+
+# -----------------------------------------------------------------------------
+# Etapa 4 -- varreduras opcionais (cada item herda de 'hybrid' e sobrescreve)
+# -----------------------------------------------------------------------------
+# Teste rapido (UAV005, 45 alvos/quadro): com CSRT o hibrido levou 1,2 s/quadro (~20 ms
+# por trilha); com KCF, 15 ms/quadro; com MOSSE, 1,7 ms/quadro. Uma variante CSRT leva
+# ~3-4 h nas 30 sequencias; por isso a varredura de N_red roda com KCF, e as de CSRT
+# ficam desabilitadas (habilite se quiser rodar em outra noite). ASSUMPTIONS.md, E-06.
+sweeps:
+  hit_reference_timing: true        # HIT-Tracker com tempo por quadro (~20 min)
+  variants:
+    - {name: hybrid_kcf_n15,   local_tracker: kcf,   enabled: true}
+    - {name: hybrid_mosse_n15, local_tracker: mosse, enabled: true}
+    - {name: hybrid_kcf_n5,  local_tracker: kcf, n_red: 5,  enabled: true}
+    - {name: hybrid_kcf_n10, local_tracker: kcf, n_red: 10, enabled: true}
+    - {name: hybrid_kcf_n30, local_tracker: kcf, n_red: 30, enabled: true}
+    - {name: hybrid_csrt_n5,  n_red: 5,  enabled: false}
+    - {name: hybrid_csrt_n10, n_red: 10, enabled: false}
+    - {name: hybrid_csrt_n30, n_red: 30, enabled: false}
+    - {name: hybrid_csrt_n15_hem, detector_weights: hardmining, enabled: false}
+    - {name: hybrid_csrt_n15_hem_sahi512, detector_weights: hardmining, sahi: {enabled: true}, enabled: false}
+    - {name: hybrid_csrt_n15_refail, lifecycle: {redetect_on_failure: true}, enabled: false}
+
+# -----------------------------------------------------------------------------
+# H4 -- referencia visivel (DUT Anti-UAV, pipeline do SIGE instrumentado)
+# Preencha os dois caminhos para habilitar; sem eles H4 fica inconclusiva.
+# Formato esperado (o do SIGE): images_dir com videoNN_00001.jpg, gt_dir com
+# os videoNN_gt.txt oficiais (busca recursiva, como uav_common.official_gt_files).
+# -----------------------------------------------------------------------------
+dut:
+  images_dir: ~/PycharmProjects/TesteYolo26/datasets/anti_uav_tracking_test_final/images/test
+  # GT: pasta do GT oficial (videoNN_gt.txt, ex.: .../datasets/_bruto) OU a dos rotulos YOLO do
+  # PASSO 2 do SIGE (videoNN_00001.txt). Se houver o oficial, prefira-o (o artigo usou o oficial).
+  gt_dir: ~/PycharmProjects/TesteYolo26/datasets/anti_uav_tracking_test_final/labels/test
+  fps_declared: null    # o DUT e distribuido como quadros; informe se souber a taxa
+  n_red: 15
+  init_conf: 0.50
+  switch_conf: 0.70
+  local_tracker: csrt
+
+drift:
+  max_age: 30
+  min_anchor_iou: 0.5
+
+# -----------------------------------------------------------------------------
+# Etapa 1 -- teste rapido
+# -----------------------------------------------------------------------------
+smoke:
+  sequence: "UAV005"
+  hit_frames: 100       # quadros do HIT-Tracker cronometrados no teste rapido
+  sweep_frames: 150     # quadros de KCF/MOSSE no teste rapido
+  dut_video: "video03"
+
+analysis:
+  alpha: 0.05
+  density_bins: [0, 5, 10, 15, 20, 25, 30, 40, 60]
+  min_frames_per_bin: 200

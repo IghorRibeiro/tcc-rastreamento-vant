@@ -1,0 +1,38 @@
+# Ambiente do VANT único no visível (SIGE, DUT Anti-UAV): treino e validação dos detectores,
+# geração das trajetórias (BoT-SORT, ByteTrack, DeepSORT, CSRT, KCF, MOSSE, MedianFlow) e o
+# pacote hybrid-uav-tracking-prediction. Versões do TesteYolo26/.venv (Python 3.13.5, Apple M2).
+#
+# Observações:
+# - Use SOMENTE opencv-contrib-python (o ambiente original tinha também opencv-python, que
+#   conflita com ele e foi retirado daqui).
+# - deep-sort-realtime ainda importa pkg_resources: mantenha setuptools < 81.
+# - OSTrack e ODTrack rodam a partir dos repositórios oficiais, clonados à parte, com as
+#   dependências da seção opcional abaixo.
+
+ultralytics==8.4.53
+ultralytics-thop==2.0.19
+torch==2.12.0
+torchvision==0.27.0
+numpy==2.4.5
+pandas==3.0.3
+scipy==1.17.1
+matplotlib==3.10.9
+pillow==12.2.0
+PyYAML==6.0.3
+opencv-contrib-python==4.13.0.92
+lap==0.5.13
+motmetrics==1.4.0
+pycocotools==2.0.11
+deep-sort-realtime==1.3.2
+setuptools<81
+gdown==6.2.0
+tqdm==4.70.0
+
+# --- opcional: OSTrack e ODTrack (repositórios oficiais) ---
+timm==1.0.29
+einops==0.8.2
+easydict==1.13
+yacs==0.1.8
+lmdb==2.3.0
+tensorboardX==2.6.5
+Cython==3.3.0

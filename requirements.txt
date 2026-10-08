@@ -1,0 +1,30 @@
+# Ambiente do MOT no infravermelho (Track 3), do mot_prediction (28/09) e da reexecução final
+# (tcc_hoje, 07/10). Versões do DroneTrackingMOT/.venv usado nos resultados do TCC
+# (Python 3.13.5, Apple M2, PyTorch com MPS).
+#
+# Observações:
+# - Use SOMENTE opencv-contrib-python (CSRT, KCF, MOSSE e MedianFlow estão nele);
+#   não instale opencv-python nem opencv-python-headless junto.
+# - numpy 1.26.4 não tem wheel para Python 3.13: o pip compila a partir do código-fonte
+#   (precisa das ferramentas de linha de comando do Xcode no macOS).
+# - As dependências transitivas são resolvidas pelo pip.
+
+ultralytics==8.4.113
+ultralytics-thop==2.1.6
+torch==2.13.0
+torchvision==0.28.0
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.17.1
+matplotlib==3.11.1
+seaborn==0.13.2
+pillow==12.3.0
+PyYAML==6.0.3
+opencv-contrib-python==4.11.0.86
+sahi==0.12.2
+shapely==2.1.2
+motmetrics==1.4.0
+lap==0.5.13
+lapx==0.9.4
+tabulate==0.10.0
+tqdm==4.69.1

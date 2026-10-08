@@ -1,0 +1,172 @@
+# =============================================================================
+# tcc_hoje/config.yaml -- configuracao unica da reexecucao enxuta do TCC (07/10)
+#
+# Caminhos relativos sao resolvidos a partir de tcc_hoje/.
+#   {root}  = DroneTrackingMOT (pasta-mae de tcc_hoje)
+#   {teste} = paths.teste_yolo26 (projeto do SIGE; SOMENTE LEITURA)
+# Nada e escrito fora de tcc_hoje/resultados*/.
+# =============================================================================
+
+seed: 2026                     # bootstrap, sorteios; mesma semente em todo teste
+bootstrap_n: 10000
+alpha: 0.05
+
+paths:
+  teste_yolo26: "~/PycharmProjects/TesteYolo26"   # pasta do projeto do SIGE (dados e saidas salvas)
+  exp_b: "{root}/mot_prediction/results/exp_b"          # rodadas de 28/09 (somente leitura)
+  exp_b_overview: "{root}/mot_prediction/results/summary/exp_b_overview.csv"
+  mot_eval_dir: "{root}/runs/mot_eval"                  # resultados antigos do LAFusion (somente leitura)
+  run_sahi_tracker: "{root}/src/inference/run_sahi_tracker.py"
+
+# -----------------------------------------------------------------------------
+# Teste rapido (--smoke): saida em resultados_smoke/
+# -----------------------------------------------------------------------------
+smoke:
+  mot_sequences: ["UAV009", "UAV005"]   # as duas mais curtas da validacao (728 e 750 quadros)
+  dut_videos: ["video02", "video03"]    # 83 e 100 quadros
+  max_frames: 150                        # Parte 2: quadros por sequencia no teste rapido
+
+# -----------------------------------------------------------------------------
+# Parte 1a -- DUT Anti-UAV (SIGE), sem rodar rastreador
+# -----------------------------------------------------------------------------
+sot:
+  images_dir: "{teste}/datasets/anti_uav_tracking_test_final/images/test"
+  labels_dir: "{teste}/datasets/anti_uav_tracking_test_final/labels/test"
+  official_gt_dir: "{teste}/hitratepos/Anti-UAV-Tracking-V0GT"
+  avaliador: "{teste}/scripts/reviewer_validation/evaluate_tracking.py"   # avaliador das Tabelas 2 e 3
+  tabelas: "{teste}/hybrid-uav-tracking-prediction/results/tables"
+  yolo26s: "{teste}/scripts/reviewer_validation/yolo26s_tabela1/yolo26s_metrics.csv"
+  horizons: [5, 10, 15, 30]
+  dampings: [1.0, 0.95]
+  hibrido: "CSRT"                  # Tabela 3 "Hibrido (proposto)" = linha CSRT da Tabela 2
+  referencias: ["BoT-SORT", "ByteTrack", "DeepSORT", "OSTrack", "ODTrack"]
+  locais: ["CSRT", "KCF", "MOSSE", "MedianFlow"]
+  # Candidatos de trajetoria, em ordem de preferencia. O script escolhe o PRIMEIRO
+  # que reproduz o CSV por video salvo da execucao publicada (n_predicoes, H30, SR).
+  metodos:
+    BoT-SORT:
+      rotulo: "BoT-SORT (YOLO26n)"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/exp01_yolo26n_botsort_padrao"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/botsort_yolo26n"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_final_20260906_140641/per_video_BoT-SORT_YOLO26n.csv"
+      tabela3: "BoT-SORT (YOLO26n)"
+    ByteTrack:
+      rotulo: "ByteTrack"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/reviewer_validation/bytetrack"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/bytetrack"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_final_20260906_140641/per_video_ByteTrack.csv"
+      tabela3: "ByteTrack"
+    DeepSORT:
+      rotulo: "DeepSORT"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/reviewer_validation/deepsort"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/deepsort"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_final_20260906_140641/per_video_DeepSORT.csv"
+      tabela3: "DeepSORT"
+    OSTrack:
+      rotulo: "OSTrack"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/reviewer_validation/ostrack"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/ostrack"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_final_20260906_140641/per_video_OSTrack.csv"
+      tabela3: "OSTrack"
+    ODTrack:
+      rotulo: "ODTrack"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/reviewer_validation/odtrack"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/odtrack"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_final_20260906_140641/per_video_ODTrack.csv"
+      tabela3: "ODTrack"
+    CSRT:
+      rotulo: "Híbrido CSRT"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/hibrido_csrt"
+        - "{teste}/avaliacao_tracking/predicoes/csrt_hibrido_fps"
+        - "{teste}/avaliacao_tracking/predicoes/final_20260906_140641/csrt"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/csrt"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_local_trackers/per_video_CSRT.csv"
+      tabela2: "CSRT (adotado)"
+      tabela3: "Híbrido (proposto)"
+    KCF:
+      rotulo: "Híbrido KCF"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/kcf_hibrido"
+        - "{teste}/avaliacao_tracking/predicoes/kcf_hibrido_fps"
+        - "{teste}/avaliacao_tracking/predicoes/final_20260906_140641/kcf"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/kcf"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_local_trackers/per_video_KCF.csv"
+      tabela2: "KCF"
+    MOSSE:
+      rotulo: "Híbrido MOSSE"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/mosse_hibrido"
+        - "{teste}/avaliacao_tracking/predicoes/final_20260906_140641/mosse"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/mosse"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_local_trackers/per_video_MOSSE.csv"
+      tabela2: "MOSSE"
+    MedianFlow:
+      rotulo: "Híbrido MedianFlow"
+      candidatos:
+        - "{teste}/avaliacao_tracking/predicoes/medianflow_hibrido"
+        - "{teste}/avaliacao_tracking/predicoes/final_20260906_140641/medianflow"
+        - "{teste}/hybrid-uav-tracking-prediction/results/predictions/medianflow"
+      ref_por_video: "{teste}/scripts/reviewer_validation/results_local_trackers/per_video_MedianFlow.csv"
+      tabela2: "MedianFlow"
+  tolerancia_h30_px: 1.0e-3      # |H30 recalculado - H30 salvo| por video para "reproduz"
+  tolerancia_sr: 1.0e-6
+
+# -----------------------------------------------------------------------------
+# Parte 1b/1c/1d -- MOT (Track 3), trajetorias e tempos de 28/09
+# -----------------------------------------------------------------------------
+mot:
+  variantes:
+    baseline_ref: "Linha de base (YOLO26n + BoT-SORT)"
+    hit_ref: "HIT-Tracker"
+    hybrid_csrt_n15: "Híbrido CSRT (N=15)"
+  pares_suporte_comum:
+    - ["hit_ref", "baseline_ref"]
+    - ["hybrid_csrt_n15", "baseline_ref"]
+    - ["hybrid_csrt_n15", "hit_ref"]
+  horizons: [5, 10, 15, 30]
+  dampings: [1.0, 0.95]
+  workers_cpu: 4                 # Parte 1b (so CPU)
+
+causa_raiz:
+  fatores:
+    - {coluna: densidade_media,         rotulo: "Densidade (alvos/quadro)",   arquivo: null}
+    - {coluna: mean_motion,             rotulo: "Movimento de câmera (px/quadro)", arquivo: camera_motion_estimates.csv}
+    - {coluna: mean_edge_density,       rotulo: "Densidade de bordas",        arquivo: frame_quality_metrics.csv}
+    - {coluna: mean_local_contrast,     rotulo: "Contraste local",            arquivo: frame_quality_metrics.csv}
+    - {coluna: mean_target_bg_contrast, rotulo: "Contraste alvo-fundo",       arquivo: target_bg_contrast_per_sequence.csv}
+    - {coluna: mean_entropy,            rotulo: "Entropia",                   arquivo: frame_quality_metrics.csv}
+    - {coluna: mean_laplacian_var,      rotulo: "Variância do laplaciano",    arquivo: frame_quality_metrics.csv}
+    - {coluna: mean_hot_pixel_pct,      rotulo: "Pixels quentes (%)",         arquivo: frame_quality_metrics.csv}
+  figura: [densidade_media, mean_motion, mean_edge_density, mean_local_contrast]
+
+# -----------------------------------------------------------------------------
+# Parte 2 -- rodadas novas (so acuracia; sem FPS; estado zerado por sequencia)
+# -----------------------------------------------------------------------------
+parte2:
+  conf: 0.25
+  frame_wh: [640, 512]                     # normalizacao do custo GM (= run_robust_flit_sweep.py)
+  pesos:
+    base: "{root}/weights/best.pt"
+    hem: "{root}/weights/best_hardmining.pt"
+  determinismo_seqs: ["UAV009", "UAV005"]
+  # run_sahi_tracker.py::main, dicionario CONFIGS (tamanho -> sobreposicao)
+  sahi_overlap: {320: 0.30, 384: 0.25, 448: 0.20, 512: 0.20, 576: 0.20}
+  sahi_extra: [320, 384, 448, 576]
+  gm_gammas: [0.55, 0.15, 0.25, 0.35, 0.45, 0.65, 0.75, 0.85]
+  leaderboard: [bytetrack, ocsort, deepocsort, fasttrack, tracktrack]
+  rotulos_leaderboard:
+    botsort: "BoT-SORT"
+    bytetrack: "ByteTrack"
+    ocsort: "OC-SORT"
+    deepocsort: "Deep OC-SORT"
+    fasttrack: "FastTrack"
+    tracktrack: "TrackTrack"
+
+# DeepSORT do SIGE (scripts/reviewer_validation/run_alt_trackers.py) -- so registro
+deepsort_config: {max_age: 30, n_init: 3, nms_max_overlap: 1.0, max_cosine_distance: 0.7, embedder: mobilenet}

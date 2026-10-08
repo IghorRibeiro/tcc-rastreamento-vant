@@ -166,23 +166,19 @@ def fig_gm(plt, out, figs):
     fig, axes = plt.subplots(1, 3, figsize=(LARGURA, 2.4))
     for ax, col, lab, lt in zip(axes, ("MOTA", "IDF1", "IDs"), ("MOTA (%)", "IDF1 (%)", "Trocas de identidade (IDs)"),
                                 "abc"):
-        ax.plot(g["gamma"], g[col], color=OKABE[0], marker="o", ms=3.5, lw=1.2, label="Nova rodada (estado zerado)")
-        old = g[f"{col}_antigo"] if f"{col}_antigo" in g.columns else None
-        if old is not None and np.isfinite(old.to_numpy(float)).any():
-            ax.plot(g["gamma"], old, color="0.55", marker="o", ms=3.5, mfc="white", lw=0.8, ls="--",
-                    label="Varredura antiga")
+        ax.plot(g["gamma"], g[col], color=OKABE[0], marker="o", ms=3.5, lw=1.2, label="Geman-McClure + NSA-Kalman")
         sel = g[np.isclose(g["gamma"], 0.55)]
         if len(sel):
             ax.scatter(sel["gamma"], sel[col], s=40, facecolor="none", edgecolor=OKABE[1], lw=1.2, zorder=4,
                        label="γ = 0,55 (HIT-Tracker)")
         if bl is not None and col in bl.index and np.isfinite(float(bl[col])):
-            ax.axhline(float(bl[col]), color=OKABE[2], lw=0.9, ls=":", label="Linha de base (sem GM/NSA)")
+            ax.axhline(float(bl[col]), color=OKABE[2], lw=0.9, ls=":", label="Linha de base")
         ax.set_xlabel("γ (Geman-McClure)")
         ax.set_ylabel(lab)
         virgula(ax)
         letra(ax, f"({lt})")
     h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, loc="lower center", ncol=4, bbox_to_anchor=(0.5, -0.04))
+    fig.legend(h, l, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.04))
     fig.tight_layout(rect=(0, 0.1, 1, 1))
     salvar(fig, figs / "lafusion_sensibilidade_gm")
 
@@ -212,7 +208,7 @@ def fig_fps(plt, out, figs):
                     xs = np.linspace(b["n_alvos"].min(), b["n_alvos"].max(), 50)
                     a2.plot(xs, rr["intercepto_ms"] + rr["inclinacao_ms_por_alvo"] * xs, color=CORES_VAR[v], lw=1.1)
     a1.set_yscale("log")
-    a2.set_yscale("log")
+    a2.set_ylim(bottom=0)          # eixo linear: as retas de regressao aparecem como retas
     a1.set_xlabel("Densidade média da sequência (alvos/quadro)")
     a1.set_ylabel("Quadros por segundo")
     a2.set_xlabel("Alvos no quadro")
@@ -248,9 +244,13 @@ def fig_h30_idf1(plt, out, figs):
                 rho = float(sel.iloc[0]["estimativa"])
         ax.scatter(j["i"], j["e"], s=16, color=CORES_VAR[v], marker=MARC_VAR[v], edgecolor="white", linewidth=0.3,
                    label=f"{labels[v]} (ρ = {br(rho, 2)})")
+        if len(j) >= 2:                                  # reta de tendencia (minimos quadrados)
+            b, a = np.polyfit(j["i"].to_numpy(float), j["e"].to_numpy(float), 1)
+            xs = np.linspace(j["i"].min(), j["i"].max(), 50)
+            ax.plot(xs, a + b * xs, color=CORES_VAR[v], lw=1.1)
     ax.set_xlabel("IDF1 da sequência (%)")
     ax.set_ylabel("Erro em H30 (diagonais do alvo)")
-    ax.legend(loc="upper right")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=1)   # abaixo do grafico: nao cobre pontos
     virgula(ax)
     fig.tight_layout()
     salvar(fig, figs / "mot_h30_idf1")

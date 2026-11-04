@@ -1,0 +1,12 @@
+# Extra packages to run the detector and the trackers (etapa3_predicao/run_hybrid_mot.py and the DroneTrackingMOT code).
+# Apple M2 (PyTorch with MPS) was used for the timings of the TCC. Install after requirements.txt.
+-r requirements.txt
+ultralytics==8.4.113
+ultralytics-thop==2.1.6
+torch==2.13.0
+torchvision==0.28.0
+sahi==0.12.2
+lap==0.5.13
+lapx==0.9.4
+shapely==2.1.2
+tqdm==4.69.1

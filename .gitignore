@@ -1,34 +1,23 @@
-# --- ambientes e caches ---
+# --- environments and caches ---
 .venv/
 .venv-*/
 venv/
-/mot_infravermelho/.venv
 __pycache__/
 *.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- editors and operating system ---
 .DS_Store
 .idea/
 .vscode/
-.ipynb_checkpoints/
 
-# --- dados, pesos e resultados: NÃO versionar (ver README) ---
-# links criados por ligar_dados.sh
-/mot_infravermelho/dataset
-/mot_infravermelho/weights
-/mot_infravermelho/runs
-/mot_infravermelho/audit
-/mot_infravermelho/mot_prediction/results
-/mot_infravermelho/mot_prediction/logs
-/mot_infravermelho/tcc_hoje/resultados
-/mot_infravermelho/tcc_hoje/resultados_smoke
-/sot_visivel/hybrid-uav-tracking-prediction/pesos_treinados
-/sot_visivel/projeto_sige/datasets
-/sot_visivel/projeto_sige/avaliacao_tracking
-/sot_visivel/projeto_sige/pesos_treinados
-/sot_visivel/projeto_sige/hitratepos
-/figuras/cache_pipeline_mot/
-/saida_figuras/
-
-# qualquer peso, vídeo, imagem ou tabela gerada que caia aqui por engano
+# --- data, weights and run outputs: not versioned (see README) ---
+/data/
+/runs/
+/weights/
 *.pt
 *.pth
 *.onnx
@@ -36,10 +25,9 @@ __pycache__/
 *.mlpackage
 *.mp4
 *.avi
-*.jpg
-*.jpeg
-*.png
-*.pdf
-*.zip
-*.csv
-*.tmp
+*.mov
+
+# --- regenerated outputs ---
+/results_*/
+/figures/cache*/
+*.log

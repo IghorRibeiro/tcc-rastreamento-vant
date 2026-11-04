@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or the reported results, please cite the thesis."
+title: "Rastreamento de drones usando visão computacional e redes neurais profundas: avaliação de arquiteturas leves em múltiplos cenários"
+type: software
+authors:
+  - family-names: "Ribeiro"
+    given-names: "Ighor de Souza"
+    affiliation: "Centro de Instrução Almirante Alexandrino (CIAA), Marinha do Brasil"
+repository-code: "https://github.com/IghorRibeiro/tcc-rastreamento-vant"
+license: AGPL-3.0-only
+version: "1.0-tcc2026"
+date-released: "2026-11-03"
+keywords:
+  - drone tracking
+  - anti-UAV
+  - multi-object tracking
+  - Kalman filter
+  - trajectory prediction
+  - YOLO
+  - infrared
+preferred-citation:
+  type: thesis
+  thesis-type: "Trabalho de Conclusão de Curso (Curso de Aperfeiçoamento Avançado em Sistema de Armas)"
+  title: "Rastreamento de drones usando visão computacional e redes neurais profundas: avaliação de arquiteturas leves em múltiplos cenários"
+  authors:
+    - family-names: "Ribeiro"
+      given-names: "Ighor de Souza"
+  year: 2026
+  month: 11
+  city: "Rio de Janeiro"
+  institution:
+    name: "Centro de Instrução Almirante Alexandrino, Marinha do Brasil"

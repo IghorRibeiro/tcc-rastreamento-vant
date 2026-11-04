@@ -1,0 +1,26 @@
+tcc-rastreamento-vant - third-party code and licenses
+=====================================================
+
+This repository is distributed under the GNU Affero General Public License v3.0 (see LICENSE).
+
+Copyright (c) 2026 Ighor de Souza Ribeiro.
+
+Code that comes from the three papers integrated by the TCC keeps the copyright of its authors:
+
+  * etapa3_predicao/trajpred/kalman.py and etapa3_predicao/trajpred/sot.py reproduce the external constant-velocity
+    Kalman filter and the single-target error protocol of the SIGE 2026 code
+    (github.com/IghorRibeiro/hybrid-uav-tracking-prediction, MIT):
+    Copyright (c) 2026 Ighor de Souza Ribeiro, Rigel Procópio Fernandes, Gabriel de Sapienza Luna.
+  * etapa3_predicao/trajpred/matching.py follows the per-frame evaluation loop of the LAFusion 2026 code
+    (github.com/IghorRibeiro/DroneTrackingMOT, AGPL-3.0): same authors.
+  * etapa3_predicao/trajpred/hybrid_mot.py extends the hybrid architecture of the SIGE 2026 paper to multiple targets
+    and calls, at run time, the Geman-McClure association cost of DroneTrackingMOT.
+
+Ultralytics (AGPL-3.0) - https://github.com/ultralytics/ultralytics
+  The detector (YOLO26n) and the trackers are used as a library and are not copied into this repository. The
+  Geman-McClure cost and the NSA-Kalman patch, which adapt Ultralytics code, live in DroneTrackingMOT.
+
+OpenCV (Apache-2.0), py-motmetrics (MIT), SciPy, NumPy, pandas and Matplotlib (BSD) are used as libraries.
+
+Datasets (not redistributed): DUT Anti-UAV (Zhao et al., 2022) and Track 3 of the 4th Anti-UAV Challenge
+(DOI 10.5281/zenodo.15103888). Each keeps its own license and terms of use.

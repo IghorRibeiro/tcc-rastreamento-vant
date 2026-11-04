@@ -1,0 +1,26 @@
+# Hybrid architecture extended to multiple targets (Track 3). Used by etapa3_predicao/run_hybrid_mot.py.
+name: hybrid_csrt_n15
+detector_weights: best.pt           # YOLO26n fine-tuned on the Track 3 training sequences
+n_red: 15                           # detector runs every 15 frames (and on the first frame)
+local_tracker: csrt                 # csrt | kcf | mosse | medianflow
+init_conf: 0.5                      # minimum confidence to start (or reactivate) a track
+switch_conf: 0.7                    # minimum confidence to re-anchor a track still followed by the local tracker
+det_conf: 0.5                       # confidence passed to the detector
+association:                        # Geman-McClure cost of the HIT-Tracker, fused with the detection score
+  gamma: 0.55
+  match_thresh: 0.8
+  fuse_score: true
+  proximity_thresh: 0.5
+lifecycle:
+  max_lost_frames: 30               # a lost track can be reactivated for up to 30 frames
+  max_unconfirmed_frames: 30        # an active track without an associated detection for 30 frames dies
+  detect_when_empty: true           # no active track -> detect at every frame
+  redetect_on_failure: false
+sahi:
+  enabled: false
+  slice: 512
+  overlap: 0.2
+warmup_calls: 2
+frame:
+  width: 640
+  height: 512

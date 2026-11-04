@@ -1,0 +1,11 @@
+# Statistical protocol (TCC, Section 3.4.5). The sample unit is the video sequence.
+seed: 2026                          # same seed in every bootstrap, so results do not depend on test order
+bootstrap_resamples: 10000          # BCa bootstrap
+alpha: 0.05                         # applied to Holm-adjusted p-values
+paired_test: wilcoxon_two_sided
+correlation: spearman
+families:
+  F1: "Track 3: damping, identity vs prediction, HIT-Tracker vs baseline, cost slope (H1-H4, six tests)"
+  F2: "DUT Anti-UAV: hybrid (CSRT) vs each reference method, H30, common support"
+  F3: "DUT Anti-UAV: CSRT vs KCF, MOSSE and MedianFlow, H30"
+  F4: "DUT Anti-UAV: damped vs persistent filter, H30, nine methods"

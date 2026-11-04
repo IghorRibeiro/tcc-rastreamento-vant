@@ -1,0 +1,10 @@
+method,fps,source
+BoT-SORT,42.7,mean of the per-video logged FPS (Apple M2)
+ByteTrack,58.7,mean of the per-video logged FPS (Apple M2)
+DeepSORT,4.5,mean of the per-video logged FPS (Apple M2)
+ODTrack,7.3,mean of the per-video logged FPS (Apple M2)
+OSTrack,13.7,mean of the per-video logged FPS (Apple M2)
+CSRT,66.4,"SIGE 2026, Table 2 (local trackers, Apple M2)"
+KCF,227.2,"SIGE 2026, Table 2 (local trackers, Apple M2)"
+MOSSE,406.4,"SIGE 2026, Table 2 (local trackers, Apple M2)"
+MedianFlow,258.8,"SIGE 2026, Table 2 (local trackers, Apple M2)"

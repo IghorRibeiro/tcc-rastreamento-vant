@@ -1,0 +1,17 @@
+# Public datasets used in the TCC. They are not redistributed (see README).
+dut_anti_uav:
+  scenario: single target, visible spectrum
+  detection: {train: 5200, val: 2600, test: 2200}
+  tracking: {sequences: 20, frames: 24804, frames_without_target: 2586, fps: 30}
+track3:
+  scenario: swarms, infrared
+  source: 4th Anti-UAV Challenge, Track 3
+  doi: 10.5281/zenodo.15103888
+  resolution: [640, 512]
+  fps: 25
+  train_stride: 4                   # one frame in four for detector training
+  train_images: 32330
+  val_images: 5724
+  tracking_sequences: 30            # full validation videos, no subsampling
+  tracking_frames: 22839
+  tracking_boxes: 478548

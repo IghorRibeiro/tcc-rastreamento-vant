@@ -1,0 +1,617 @@
+table,row,column,value
+T4,YOLO26n,precision,0.956
+T4,YOLO26n,recall,0.899
+T4,YOLO26n,map50,0.944
+T4,YOLO26n,map50_95,0.616
+T4,YOLO26m,precision,0.969
+T4,YOLO26m,recall,0.923
+T4,YOLO26m,map50,0.961
+T4,YOLO26m,map50_95,0.662
+T4,YOLO26s,precision,0.9236371249
+T4,YOLO26s,recall,0.8868194947
+T4,YOLO26s,map50,0.9057267828
+T4,YOLO26s,map50_95,0.4756005693
+T5,BoT-SORT,sa05,0.8277549962
+T5,BoT-SORT,sr05,0.8323797874
+T5,BoT-SORT,mean_iou,0.6593817152
+T5,BoT-SORT,auc,0.6622849275
+T5,BoT-SORT,fps,42.7
+T14,BoT-SORT,H5_mean_persistent,67.42752601
+T14,BoT-SORT,H5_std_persistent,166.1084234
+T14,BoT-SORT,H10_mean_persistent,95.86845617
+T14,BoT-SORT,H10_std_persistent,189.2535267
+T14,BoT-SORT,H15_mean_persistent,126.7705268
+T14,BoT-SORT,H15_std_persistent,215.5339022
+T14,BoT-SORT,H30_mean_persistent,226.1943989
+T14,BoT-SORT,H30_std_persistent,303.5815205
+T14,BoT-SORT,H30_max_persistent,1142.060357
+T14,BoT-SORT,H5_mean_damped,64.34934081
+T14,BoT-SORT,H5_std_damped,162.2021893
+T14,BoT-SORT,H10_mean_damped,86.1458068
+T14,BoT-SORT,H10_std_damped,176.3644655
+T14,BoT-SORT,H15_mean_damped,106.8151096
+T14,BoT-SORT,H15_std_damped,188.8242841
+T14,BoT-SORT,H30_mean_damped,158.3188025
+T14,BoT-SORT,H30_std_damped,215.3986575
+T14,BoT-SORT,H30_max_damped,903.2520069
+T14,BoT-SORT,H30_damping_reduction_pct,30.00763797
+T5,DeepSORT,sa05,0.829735639
+T5,DeepSORT,sr05,0.8336406513
+T5,DeepSORT,mean_iou,0.6615553088
+T5,DeepSORT,auc,0.6640082491
+T5,DeepSORT,fps,4.5
+T14,DeepSORT,H5_mean_persistent,65.87379965
+T14,DeepSORT,H5_std_persistent,169.0272971
+T14,DeepSORT,H10_mean_persistent,101.7222715
+T14,DeepSORT,H10_std_persistent,223.9087184
+T14,DeepSORT,H15_mean_persistent,140.0854434
+T14,DeepSORT,H15_std_persistent,277.6806435
+T14,DeepSORT,H30_mean_persistent,261.9328962
+T14,DeepSORT,H30_std_persistent,446.0075146
+T14,DeepSORT,H30_max_persistent,1979.990755
+T14,DeepSORT,H5_mean_damped,61.6943974
+T14,DeepSORT,H5_std_damped,159.9060113
+T14,DeepSORT,H10_mean_damped,88.38713276
+T14,DeepSORT,H10_std_damped,195.3852306
+T14,DeepSORT,H15_mean_damped,112.8553264
+T14,DeepSORT,H15_std_damped,221.8855213
+T14,DeepSORT,H30_mean_damped,171.2047735
+T14,DeepSORT,H30_std_damped,273.2697059
+T14,DeepSORT,H30_max_damped,1234.591153
+T14,DeepSORT,H30_damping_reduction_pct,34.637926
+T5,ByteTrack,sa05,0.8325666786
+T5,ByteTrack,sr05,0.836416716
+T5,ByteTrack,mean_iou,0.6604471878
+T5,ByteTrack,auc,0.6630184964
+T5,ByteTrack,fps,58.7
+T14,ByteTrack,H5_mean_persistent,64.81015799
+T14,ByteTrack,H5_std_persistent,165.5625569
+T14,ByteTrack,H10_mean_persistent,102.5193952
+T14,ByteTrack,H10_std_persistent,224.6856074
+T14,ByteTrack,H15_mean_persistent,142.5266202
+T14,ByteTrack,H15_std_persistent,282.5081115
+T14,ByteTrack,H30_mean_persistent,270.0782296
+T14,ByteTrack,H30_std_persistent,462.9345629
+T14,ByteTrack,H30_max_persistent,2058.635077
+T14,ByteTrack,H5_mean_damped,60.4519049
+T14,ByteTrack,H5_std_damped,156.1747409
+T14,ByteTrack,H10_mean_damped,88.46028695
+T14,ByteTrack,H10_std_damped,194.6913338
+T14,ByteTrack,H15_mean_damped,113.7361296
+T14,ByteTrack,H15_std_damped,223.5713241
+T14,ByteTrack,H30_mean_damped,174.1891085
+T14,ByteTrack,H30_std_damped,279.3771306
+T14,ByteTrack,H30_max_damped,1262.809936
+T14,ByteTrack,H30_damping_reduction_pct,35.50420235
+T5,OSTrack,sa05,0.8029315415
+T5,OSTrack,sr05,0.8311950945
+T5,OSTrack,mean_iou,0.6683742329
+T5,OSTrack,auc,0.6718082311
+T5,OSTrack,fps,13.7
+T14,OSTrack,H5_mean_persistent,111.7558424
+T14,OSTrack,H5_std_persistent,215.3169666
+T14,OSTrack,H10_mean_persistent,126.7358228
+T14,OSTrack,H10_std_persistent,212.8703278
+T14,OSTrack,H15_mean_persistent,144.4575215
+T14,OSTrack,H15_std_persistent,210.5053394
+T14,OSTrack,H30_mean_persistent,204.3868432
+T14,OSTrack,H30_std_persistent,206.2913343
+T14,OSTrack,H30_max_persistent,752.753725
+T14,OSTrack,H5_mean_damped,111.2099991
+T14,OSTrack,H5_std_damped,215.3408899
+T14,OSTrack,H10_mean_damped,124.402252
+T14,OSTrack,H10_std_damped,212.7407727
+T14,OSTrack,H15_mean_damped,138.4326692
+T14,OSTrack,H15_std_damped,209.9991968
+T14,OSTrack,H30_mean_damped,177.3951253
+T14,OSTrack,H30_std_damped,202.4220048
+T14,OSTrack,H30_max_damped,753.7077007
+T14,OSTrack,H30_damping_reduction_pct,13.20619152
+T5,ODTrack,sa05,0.8189822453
+T5,ODTrack,sr05,0.8597971602
+T5,ODTrack,mean_iou,0.7072276741
+T5,ODTrack,auc,0.7094203347
+T5,ODTrack,fps,7.3
+T14,ODTrack,H5_mean_persistent,73.42334039
+T14,ODTrack,H5_std_persistent,157.9053551
+T14,ODTrack,H10_mean_persistent,88.33546827
+T14,ODTrack,H10_std_persistent,156.826878
+T14,ODTrack,H15_mean_persistent,106.0761289
+T14,ODTrack,H15_std_persistent,156.3482278
+T14,ODTrack,H30_mean_persistent,167.3703879
+T14,ODTrack,H30_std_persistent,160.825488
+T14,ODTrack,H30_max_persistent,655.0913339
+T14,ODTrack,H5_mean_damped,72.96720338
+T14,ODTrack,H5_std_damped,157.870623
+T14,ODTrack,H10_mean_damped,86.24567687
+T14,ODTrack,H10_std_damped,156.2803921
+T14,ODTrack,H15_mean_damped,100.4072675
+T14,ODTrack,H15_std_damped,154.5969982
+T14,ODTrack,H30_mean_damped,140.7210967
+T14,ODTrack,H30_std_damped,150.3241177
+T14,ODTrack,H30_max_damped,654.1525793
+T14,ODTrack,H30_damping_reduction_pct,15.92234532
+T5,CSRT,sa05,0.7857740037
+T5,CSRT,sr05,0.8107531484
+T5,CSRT,mean_iou,0.6458269001
+T5,CSRT,auc,0.6477848731
+T5,CSRT,fps,66.4
+T14,CSRT,H5_mean_persistent,36.71753695
+T14,CSRT,H5_std_persistent,49.82374224
+T14,CSRT,H10_mean_persistent,53.86210183
+T14,CSRT,H10_std_persistent,56.22611225
+T14,CSRT,H15_mean_persistent,73.66248506
+T14,CSRT,H15_std_persistent,65.15021565
+T14,CSRT,H30_mean_persistent,139.7983064
+T14,CSRT,H30_std_persistent,97.59001124
+T14,CSRT,H30_max_persistent,305.9996999
+T14,CSRT,H5_mean_damped,36.03625323
+T14,CSRT,H5_std_damped,49.7034715
+T14,CSRT,H10_mean_damped,51.1603212
+T14,CSRT,H10_std_damped,54.29196063
+T14,CSRT,H15_mean_damped,66.97498695
+T14,CSRT,H15_std_damped,59.61089851
+T14,CSRT,H30_mean_damped,111.1328937
+T14,CSRT,H30_std_damped,75.95064955
+T14,CSRT,H30_max_damped,299.5292142
+T14,CSRT,H30_damping_reduction_pct,20.50483546
+T5,KCF,sa05,0.7393847133
+T5,KCF,sr05,0.740910924
+T5,KCF,mean_iou,0.5822066185
+T5,KCF,auc,0.5860121599
+T5,KCF,fps,227.2
+T14,KCF,H5_mean_persistent,62.2414822
+T14,KCF,H5_std_persistent,136.2964507
+T14,KCF,H10_mean_persistent,82.44122617
+T14,KCF,H10_std_persistent,144.76835
+T14,KCF,H15_mean_persistent,104.9167723
+T14,KCF,H15_std_persistent,154.5625188
+T14,KCF,H30_mean_persistent,179.4582168
+T14,KCF,H30_std_persistent,189.4036258
+T14,KCF,H30_max_persistent,796.0450277
+T14,KCF,H5_mean_damped,61.1003889
+T14,KCF,H5_std_damped,134.8625082
+T14,KCF,H10_mean_damped,77.22035237
+T14,KCF,H10_std_damped,140.0816312
+T14,KCF,H15_mean_damped,93.23210235
+T14,KCF,H15_std_damped,144.9199275
+T14,KCF,H30_mean_damped,136.8214807
+T14,KCF,H30_std_damped,156.96776
+T14,KCF,H30_max_damped,705.2773792
+T14,KCF,H30_damping_reduction_pct,23.75858674
+T5,MOSSE,sa05,0.8190332249
+T5,MOSSE,sr05,0.8231275198
+T5,MOSSE,mean_iou,0.6475449287
+T5,MOSSE,auc,0.6505163045
+T5,MOSSE,fps,406.4
+T14,MOSSE,H5_mean_persistent,58.72014831
+T14,MOSSE,H5_std_persistent,137.44884
+T14,MOSSE,H10_mean_persistent,83.52273501
+T14,MOSSE,H10_std_persistent,159.5590127
+T14,MOSSE,H15_mean_persistent,110.5185706
+T14,MOSSE,H15_std_persistent,182.4270179
+T14,MOSSE,H30_mean_persistent,197.9093305
+T14,MOSSE,H30_std_persistent,248.1047542
+T14,MOSSE,H30_max_persistent,1087.332626
+T14,MOSSE,H5_mean_damped,55.87245307
+T14,MOSSE,H5_std_damped,133.3389849
+T14,MOSSE,H10_mean_damped,74.52413453
+T14,MOSSE,H10_std_damped,146.9242494
+T14,MOSSE,H15_mean_damped,92.57177189
+T14,MOSSE,H15_std_damped,157.9274743
+T14,MOSSE,H30_mean_damped,139.0881643
+T14,MOSSE,H30_std_damped,177.3067707
+T14,MOSSE,H30_max_damped,805.1306125
+T14,MOSSE,H30_damping_reduction_pct,29.72126987
+T5,MedianFlow,sa05,0.7732264553
+T5,MedianFlow,sr05,0.7865785011
+T5,MedianFlow,mean_iou,0.6370007172
+T5,MedianFlow,auc,0.6397469967
+T5,MedianFlow,fps,258.8
+T14,MedianFlow,H5_mean_persistent,45.39327603
+T14,MedianFlow,H5_std_persistent,53.2888407
+T14,MedianFlow,H10_mean_persistent,66.19748161
+T14,MedianFlow,H10_std_persistent,66.65331825
+T14,MedianFlow,H15_mean_persistent,88.74688276
+T14,MedianFlow,H15_std_persistent,81.29901161
+T14,MedianFlow,H30_mean_persistent,162.2083506
+T14,MedianFlow,H30_std_persistent,126.4355684
+T14,MedianFlow,H30_max_persistent,495.4178072
+T14,MedianFlow,H5_mean_damped,44.02274291
+T14,MedianFlow,H5_std_damped,51.87925234
+T14,MedianFlow,H10_mean_damped,61.48131681
+T14,MedianFlow,H10_std_damped,61.63107021
+T14,MedianFlow,H15_mean_damped,78.55715738
+T14,MedianFlow,H15_std_damped,70.82474281
+T14,MedianFlow,H30_mean_damped,123.8495025
+T14,MedianFlow,H30_std_damped,93.83193125
+T14,MedianFlow,H30_max_damped,386.4401394
+T14,MedianFlow,H30_damping_reduction_pct,23.64788739
+T6,BoT-SORT,MOTA,75.95706178
+T10,baseline,MOTA,75.95706178
+T6,BoT-SORT,IDF1,71.21563029
+T10,baseline,IDF1,71.21563029
+T6,BoT-SORT,IDs,2355
+T10,baseline,IDs,2355
+T6,BoT-SORT,FP,47148
+T10,baseline,FP,47148
+T6,BoT-SORT,FN,65554
+T10,baseline,FN,65554
+T6,BoT-SORT,sequences,30
+T10,baseline,sequences,30
+T6,FastTracker,MOTA,72.67818484
+T6,FastTracker,IDF1,50.49107963
+T6,FastTracker,IDs,3948
+T6,FastTracker,FP,42008
+T6,FastTracker,FN,84792
+T6,FastTracker,sequences,30
+T6,ByteTrack,MOTA,71.70733134
+T6,ByteTrack,IDF1,49.39044309
+T6,ByteTrack,IDs,4582
+T6,ByteTrack,FP,46044
+T6,ByteTrack,FN,84768
+T6,ByteTrack,sequences,30
+T6,OC-SORT,MOTA,71.45030384
+T6,OC-SORT,IDF1,51.82191432
+T6,OC-SORT,IDs,4454
+T6,OC-SORT,FP,47136
+T6,OC-SORT,FN,85034
+T6,OC-SORT,sequences,30
+T6,Deep OC-SORT,MOTA,71.23130804
+T6,Deep OC-SORT,IDF1,52.52629927
+T6,Deep OC-SORT,IDs,4165
+T6,Deep OC-SORT,FP,43684
+T6,Deep OC-SORT,FN,89823
+T6,Deep OC-SORT,sequences,30
+T6,TrackTrack,MOTA,63.11007464
+T6,TrackTrack,IDF1,68.90034839
+T6,TrackTrack,IDs,836
+T6,TrackTrack,FP,7419
+T6,TrackTrack,FN,168281
+T6,TrackTrack,sequences,30
+T10,hem,MOTA,76.67611191
+T10,hem,IDF1,71.21309153
+T10,hem,IDs,2374
+T10,hem,FP,47645
+T10,hem,FN,61597
+T10,hem,sequences,30
+T10,hem_sahi512,MOTA,79.55440207
+T10,hem_sahi512,IDF1,80.2522146
+T10,hem_sahi512,IDs,712
+T10,hem_sahi512,FP,42789
+T10,hem_sahi512,FN,54341
+T10,hem_sahi512,sequences,30
+T10,gm_nsa,MOTA,76.85038909
+T10,gm_nsa,IDF1,74.81192835
+T10,gm_nsa,IDs,1611
+T10,gm_nsa,FP,50923
+T10,gm_nsa,FN,58248
+T10,gm_nsa,sequences,30
+T7,512,MOTA,79.55440207
+T7,512,IDF1,80.2522146
+T7,512,IDs,712
+T7,512,FP,42789
+T7,512,FN,54341
+T7,512,sequences,30
+F5,gm_nsa_g015,gamma,0.15
+F5,gm_nsa_g015,MOTA,76.46944507
+F5,gm_nsa_g015,IDF1,72.29122692
+F5,gm_nsa_g015,IDs,2139
+F5,gm_nsa_g025,gamma,0.25
+F5,gm_nsa_g025,MOTA,76.67569397
+F5,gm_nsa_g025,IDF1,73.5323222
+F5,gm_nsa_g025,IDs,2015
+F5,gm_nsa_g035,gamma,0.35
+F5,gm_nsa_g035,MOTA,76.78937118
+F5,gm_nsa_g035,IDF1,74.6621825
+F5,gm_nsa_g035,IDs,1889
+F5,gm_nsa_g045,gamma,0.45
+F5,gm_nsa_g045,MOTA,76.8727484
+F5,gm_nsa_g045,IDF1,74.67884568
+F5,gm_nsa_g045,IDs,1709
+F5,gm_nsa_g055,gamma,0.55
+F5,gm_nsa_g055,MOTA,76.85038909
+F5,gm_nsa_g055,IDF1,74.81192835
+F5,gm_nsa_g055,IDs,1611
+F5,gm_nsa_g065,gamma,0.65
+F5,gm_nsa_g065,MOTA,76.58980917
+F5,gm_nsa_g065,IDF1,74.04766787
+F5,gm_nsa_g065,IDs,1650
+F5,gm_nsa_g075,gamma,0.75
+F5,gm_nsa_g075,MOTA,75.96813695
+F5,gm_nsa_g075,IDF1,71.98846543
+F5,gm_nsa_g075,IDs,1973
+F5,gm_nsa_g085,gamma,0.85
+F5,gm_nsa_g085,MOTA,75.12224479
+F5,gm_nsa_g085,IDF1,70.6381
+F5,gm_nsa_g085,IDs,2211
+T12,baseline,MOTA,75.95706178
+T12,baseline,IDF1,71.21563029
+T12,baseline,IDs,2355
+T12,baseline,FP,47148
+T12,baseline,FN,65554
+T12,baseline,sequences,30
+T12,baseline,mean_time_ms,18.25098911
+T12,baseline,fps,54.79155096
+T12,hit_tracker,MOTA,79.91382265
+T12,hit_tracker,IDF1,82.70323473
+T12,hit_tracker,IDs,494
+T12,hit_tracker,FP,43742
+T12,hit_tracker,FN,51886
+T12,hit_tracker,sequences,30
+T12,hit_tracker,mean_time_ms,43.56827873
+T12,hit_tracker,fps,22.95247894
+T12,hybrid_csrt_n15,MOTA,60.91781807
+T12,hybrid_csrt_n15,IDF1,59.36664573
+T12,hybrid_csrt_n15,IDs,1453
+T12,hybrid_csrt_n15,FP,50393
+T12,hybrid_csrt_n15,FN,135181
+T12,hybrid_csrt_n15,sequences,30
+T12,hybrid_csrt_n15,mean_time_ms,382.0924046
+T12,hybrid_csrt_n15,fps,2.617167962
+COST,baseline,slope_ms_per_target,0.1319783058
+COST,baseline,ci95_low,0.04714759233
+COST,baseline,ci95_high,0.2075304305
+COST,hit_tracker,slope_ms_per_target,0.06288729807
+COST,hit_tracker,ci95_low,0.04003206604
+COST,hit_tracker,ci95_high,0.09808036599
+COST,hybrid_csrt_n15,slope_ms_per_target,32.87201588
+COST,hybrid_csrt_n15,ci95_low,14.74899925
+COST,hybrid_csrt_n15,ci95_high,53.53004669
+COST,hybrid_csrt_n15 - baseline,slope_ms_per_target,32.74003758
+COST,hybrid_csrt_n15 - baseline,ci95_low,14.58734067
+COST,hybrid_csrt_n15 - baseline,ci95_high,53.29739011
+T15,baseline_persistent,H5_norm,0.1916625169
+T15,baseline_persistent,H10_norm,0.4057225393
+T15,baseline_persistent,H15_norm,0.6623893801
+T15,baseline_persistent,H30_norm,1.613393977
+T15,baseline_persistent,H30_px,21.81034447
+T15,baseline_damped,H5_norm,0.209844558
+T15,baseline_damped,H10_norm,0.4559933704
+T15,baseline_damped,H15_norm,0.741409123
+T15,baseline_damped,H30_norm,1.69833051
+T15,baseline_damped,H30_px,24.10126714
+T15,hit_tracker_persistent,H5_norm,0.1902752707
+T15,hit_tracker_persistent,H10_norm,0.4013612748
+T15,hit_tracker_persistent,H15_norm,0.6563307958
+T15,hit_tracker_persistent,H30_norm,1.600732764
+T15,hit_tracker_persistent,H30_px,21.40951559
+T15,hit_tracker_damped,H5_norm,0.2111708587
+T15,hit_tracker_damped,H10_norm,0.4597745387
+T15,hit_tracker_damped,H15_norm,0.7485181406
+T15,hit_tracker_damped,H30_norm,1.710363253
+T15,hit_tracker_damped,H30_px,24.2059961
+T15,hybrid_csrt_n15_persistent,H5_norm,0.2244277353
+T15,hybrid_csrt_n15_persistent,H10_norm,0.4432263831
+T15,hybrid_csrt_n15_persistent,H15_norm,0.6980250593
+T15,hybrid_csrt_n15_persistent,H30_norm,1.630183451
+T15,hybrid_csrt_n15_persistent,H30_px,21.28219246
+T15,hybrid_csrt_n15_damped,H5_norm,0.2322578492
+T15,hybrid_csrt_n15_damped,H10_norm,0.4744485365
+T15,hybrid_csrt_n15_damped,H15_norm,0.7545445773
+T15,hybrid_csrt_n15_damped,H30_norm,1.704593019
+T15,hybrid_csrt_n15_damped,H30_px,23.87003739
+SUPPORT,hit_vs_baseline_persistent,norm_a,1.565997033
+SUPPORT,hit_vs_baseline_persistent,norm_b,1.61101146
+SUPPORT,hit_vs_baseline_persistent,diff,-0.04501442766
+SUPPORT,hit_vs_baseline_damped,norm_a,1.691451048
+SUPPORT,hit_vs_baseline_damped,norm_b,1.694503039
+SUPPORT,hit_vs_baseline_damped,diff,-0.003051990583
+SUPPORT,hybrid_vs_baseline_persistent,norm_a,1.624479003
+SUPPORT,hybrid_vs_baseline_persistent,norm_b,1.394173963
+SUPPORT,hybrid_vs_baseline_persistent,diff,0.2303050407
+SUPPORT,hybrid_vs_baseline_damped,norm_a,1.699889669
+SUPPORT,hybrid_vs_baseline_damped,norm_b,1.618238682
+SUPPORT,hybrid_vs_baseline_damped,diff,0.08165098687
+TRACK3,targets,mean_diagonal_px,15.89185013
+ROOT,mean_density~IDF1,pearson_r,0.1802416209
+ROOT,mean_density~IDF1,pearson_ci_low,-0.1708518889
+ROOT,mean_density~IDF1,pearson_ci_high,0.4967854907
+ROOT,mean_density~IDF1,spearman_rho,0.1433660159
+ROOT,mean_density~IDF1,spearman_p,0.4497698277
+ROOT,mean_density~MOTA,pearson_r,0.1951686341
+ROOT,mean_density~MOTA,pearson_ci_low,-0.1199629208
+ROOT,mean_density~MOTA,pearson_ci_high,0.4764479361
+ROOT,mean_density~MOTA,spearman_rho,0.1890027136
+ROOT,mean_density~MOTA,spearman_p,0.3171771541
+ROOT,mean_density~ids_per_thousand,pearson_r,-0.008172763074
+ROOT,mean_density~ids_per_thousand,pearson_ci_low,-0.2692989806
+ROOT,mean_density~ids_per_thousand,pearson_ci_high,0.3132388149
+ROOT,mean_density~ids_per_thousand,spearman_rho,-0.007569013264
+ROOT,mean_density~ids_per_thousand,spearman_p,0.9683354202
+ROOT,mean_motion~IDF1,pearson_r,0.3684372939
+ROOT,mean_motion~IDF1,pearson_ci_low,-0.01500226059
+ROOT,mean_motion~IDF1,pearson_ci_high,0.642521286
+ROOT,mean_motion~IDF1,spearman_rho,0.3401557286
+ROOT,mean_motion~IDF1,spearman_p,0.0658823636
+ROOT,mean_motion~MOTA,pearson_r,0.2238554204
+ROOT,mean_motion~MOTA,pearson_ci_low,-0.1191817187
+ROOT,mean_motion~MOTA,pearson_ci_high,0.5049081975
+ROOT,mean_motion~MOTA,spearman_rho,0.2436040044
+ROOT,mean_motion~MOTA,spearman_p,0.1945540512
+ROOT,mean_motion~ids_per_thousand,pearson_r,-0.328238071
+ROOT,mean_motion~ids_per_thousand,pearson_ci_low,-0.6161345487
+ROOT,mean_motion~ids_per_thousand,pearson_ci_high,0.2419849335
+ROOT,mean_motion~ids_per_thousand,spearman_rho,-0.3993325918
+ROOT,mean_motion~ids_per_thousand,spearman_p,0.02880376857
+ROOT,mean_edge_density~IDF1,pearson_r,-0.5996643979
+ROOT,mean_edge_density~IDF1,pearson_ci_low,-0.7774149228
+ROOT,mean_edge_density~IDF1,pearson_ci_high,-0.3112423836
+ROOT,mean_edge_density~IDF1,spearman_rho,-0.5474972191
+ROOT,mean_edge_density~IDF1,spearman_p,0.001739658213
+ROOT,mean_edge_density~MOTA,pearson_r,-0.3480228511
+ROOT,mean_edge_density~MOTA,pearson_ci_low,-0.6313931704
+ROOT,mean_edge_density~MOTA,pearson_ci_high,-0.006452713332
+ROOT,mean_edge_density~MOTA,spearman_rho,-0.4451612903
+ROOT,mean_edge_density~MOTA,spearman_p,0.01369844032
+ROOT,mean_edge_density~ids_per_thousand,pearson_r,0.5249803116
+ROOT,mean_edge_density~ids_per_thousand,pearson_ci_low,0.02071957456
+ROOT,mean_edge_density~ids_per_thousand,pearson_ci_high,0.7361540084
+ROOT,mean_edge_density~ids_per_thousand,spearman_rho,0.4438264739
+ROOT,mean_edge_density~ids_per_thousand,spearman_p,0.01401783534
+ROOT,mean_local_contrast~IDF1,pearson_r,-0.5644627044
+ROOT,mean_local_contrast~IDF1,pearson_ci_low,-0.7646879329
+ROOT,mean_local_contrast~IDF1,pearson_ci_high,-0.187085142
+ROOT,mean_local_contrast~IDF1,spearman_rho,-0.2133481646
+ROOT,mean_local_contrast~IDF1,spearman_p,0.2576362182
+ROOT,mean_local_contrast~MOTA,pearson_r,-0.2683333987
+ROOT,mean_local_contrast~MOTA,pearson_ci_low,-0.6276383538
+ROOT,mean_local_contrast~MOTA,pearson_ci_high,0.139737642
+ROOT,mean_local_contrast~MOTA,spearman_rho,-0.03092324805
+ROOT,mean_local_contrast~MOTA,spearman_p,0.8711364062
+ROOT,mean_local_contrast~ids_per_thousand,pearson_r,0.6481414803
+ROOT,mean_local_contrast~ids_per_thousand,pearson_ci_low,0.2826295131
+ROOT,mean_local_contrast~ids_per_thousand,pearson_ci_high,0.8034104969
+ROOT,mean_local_contrast~ids_per_thousand,spearman_rho,0.6200222469
+ROOT,mean_local_contrast~ids_per_thousand,spearman_p,0.0002577273564
+ROOT,mean_target_bg_contrast~IDF1,pearson_r,0.6004849805
+ROOT,mean_target_bg_contrast~IDF1,pearson_ci_low,0.3517495833
+ROOT,mean_target_bg_contrast~IDF1,pearson_ci_high,0.7640187677
+ROOT,mean_target_bg_contrast~IDF1,spearman_rho,0.5915461624
+ROOT,mean_target_bg_contrast~IDF1,spearman_p,0.0005756552799
+ROOT,mean_target_bg_contrast~MOTA,pearson_r,0.7072342624
+ROOT,mean_target_bg_contrast~MOTA,pearson_ci_low,0.4259510694
+ROOT,mean_target_bg_contrast~MOTA,pearson_ci_high,0.8494279261
+ROOT,mean_target_bg_contrast~MOTA,spearman_rho,0.7187986652
+ROOT,mean_target_bg_contrast~MOTA,spearman_p,7.666437912e-06
+ROOT,mean_target_bg_contrast~ids_per_thousand,pearson_r,-0.3114543858
+ROOT,mean_target_bg_contrast~ids_per_thousand,pearson_ci_low,-0.640226727
+ROOT,mean_target_bg_contrast~ids_per_thousand,pearson_ci_high,0.05224525243
+ROOT,mean_target_bg_contrast~ids_per_thousand,spearman_rho,-0.3094549499
+ROOT,mean_target_bg_contrast~ids_per_thousand,spearman_p,0.09609934805
+ROOT,edge_density~local_contrast,pearson_r,0.9064179275
+TESTS,"F1: H1: damped - persistent, H30, baseline (YOLO26n + BoT-SORT)",estimate,0.08493653284
+TESTS,"F1: H1: damped - persistent, H30, baseline (YOLO26n + BoT-SORT)",median_diff,0.068950063
+TESTS,"F1: H1: damped - persistent, H30, baseline (YOLO26n + BoT-SORT)",ci95_low,-0.1225670762
+TESTS,"F1: H1: damped - persistent, H30, baseline (YOLO26n + BoT-SORT)",ci95_high,0.2486660414
+TESTS,"F1: H1: damped - persistent, H30, baseline (YOLO26n + BoT-SORT)",p_raw,0.08793856762
+TESTS,"F1: H1: damped - persistent, H30, baseline (YOLO26n + BoT-SORT)",p_holm,0.2638157029
+TESTS,"F1: H1: damped - persistent, H30, HIT-Tracker",estimate,0.1096304887
+TESTS,"F1: H1: damped - persistent, H30, HIT-Tracker",median_diff,0.143017671
+TESTS,"F1: H1: damped - persistent, H30, HIT-Tracker",ci95_low,-0.101919073
+TESTS,"F1: H1: damped - persistent, H30, HIT-Tracker",ci95_high,0.2674455791
+TESTS,"F1: H1: damped - persistent, H30, HIT-Tracker",p_raw,0.06056523137
+TESTS,"F1: H1: damped - persistent, H30, HIT-Tracker",p_holm,0.2422609255
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, baseline (YOLO26n + BoT-SORT)",estimate,-0.2872080089
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, baseline (YOLO26n + BoT-SORT)",ci95_low,-0.6069735041
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, baseline (YOLO26n + BoT-SORT)",ci95_high,0.1219522102
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, baseline (YOLO26n + BoT-SORT)",p_raw,0.1238315568
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, baseline (YOLO26n + BoT-SORT)",p_holm,0.2638157029
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, HIT-Tracker",estimate,-0.2774193548
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, HIT-Tracker",ci95_low,-0.6119189638
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, HIT-Tracker",ci95_high,0.1054766785
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, HIT-Tracker",p_raw,0.1377469131
+TESTS,"F1: H2: Spearman IDF1 x persistent normalised H30, HIT-Tracker",p_holm,0.2638157029
+TESTS,"F1: H3: HIT-Tracker - baseline, H30 (common support, persistent)",estimate,-0.04501442766
+TESTS,"F1: H3: HIT-Tracker - baseline, H30 (common support, persistent)",median_diff,-0.0186543237
+TESTS,"F1: H3: HIT-Tracker - baseline, H30 (common support, persistent)",ci95_low,-0.08160844421
+TESTS,"F1: H3: HIT-Tracker - baseline, H30 (common support, persistent)",ci95_high,-0.02516488689
+TESTS,"F1: H3: HIT-Tracker - baseline, H30 (common support, persistent)",p_raw,6.917864084e-06
+TESTS,"F1: H3: HIT-Tracker - baseline, H30 (common support, persistent)",p_holm,4.150718451e-05
+TESTS,"F1: H4: time-vs-targets slope, hybrid - baseline",estimate,32.74003758
+TESTS,"F1: H4: time-vs-targets slope, hybrid - baseline",ci95_low,14.58734067
+TESTS,"F1: H4: time-vs-targets slope, hybrid - baseline",ci95_high,53.29739011
+TESTS,"F1: H4: time-vs-targets slope, hybrid - baseline",p_raw,0.000199980002
+TESTS,"F1: H4: time-vs-targets slope, hybrid - baseline",p_holm,0.00099990001
+TESTS,"F2: Hybrid CSRT - BoT-SORT, H30",estimate,-95.08162819
+TESTS,"F2: Hybrid CSRT - BoT-SORT, H30",median_diff,-2.1261789
+TESTS,"F2: Hybrid CSRT - BoT-SORT, H30",ci95_low,-262.4584801
+TESTS,"F2: Hybrid CSRT - BoT-SORT, H30",ci95_high,-20.44289815
+TESTS,"F2: Hybrid CSRT - BoT-SORT, H30",p_raw,0.2610988617
+TESTS,"F2: Hybrid CSRT - BoT-SORT, H30",p_holm,0.7832965851
+TESTS,"F2: Hybrid CSRT - ByteTrack, H30",estimate,-138.1118793
+TESTS,"F2: Hybrid CSRT - ByteTrack, H30",median_diff,-5.69970742
+TESTS,"F2: Hybrid CSRT - ByteTrack, H30",ci95_low,-509.6856552
+TESTS,"F2: Hybrid CSRT - ByteTrack, H30",ci95_high,-33.01897626
+TESTS,"F2: Hybrid CSRT - ByteTrack, H30",p_raw,0.021484375
+TESTS,"F2: Hybrid CSRT - ByteTrack, H30",p_holm,0.09616851807
+TESTS,"F2: Hybrid CSRT - DeepSORT, H30",estimate,-130.0260847
+TESTS,"F2: Hybrid CSRT - DeepSORT, H30",median_diff,-4.68448882
+TESTS,"F2: Hybrid CSRT - DeepSORT, H30",ci95_low,-486.8249097
+TESTS,"F2: Hybrid CSRT - DeepSORT, H30",ci95_high,-25.56880889
+TESTS,"F2: Hybrid CSRT - DeepSORT, H30",p_raw,0.01923370361
+TESTS,"F2: Hybrid CSRT - DeepSORT, H30",p_holm,0.09616851807
+TESTS,"F2: Hybrid CSRT - OSTrack, H30",estimate,-63.36316908
+TESTS,"F2: Hybrid CSRT - OSTrack, H30",median_diff,2.41641355
+TESTS,"F2: Hybrid CSRT - OSTrack, H30",ci95_low,-188.729738
+TESTS,"F2: Hybrid CSRT - OSTrack, H30",ci95_high,-1.056181809
+TESTS,"F2: Hybrid CSRT - OSTrack, H30",p_raw,0.898317337
+TESTS,"F2: Hybrid CSRT - OSTrack, H30",p_holm,0.904750824
+TESTS,"F2: Hybrid CSRT - ODTrack, H30",estimate,-24.85168818
+TESTS,"F2: Hybrid CSRT - ODTrack, H30",median_diff,4.02922301
+TESTS,"F2: Hybrid CSRT - ODTrack, H30",ci95_low,-98.40934017
+TESTS,"F2: Hybrid CSRT - ODTrack, H30",ci95_high,21.38286864
+TESTS,"F2: Hybrid CSRT - ODTrack, H30",p_raw,0.452375412
+TESTS,"F2: Hybrid CSRT - ODTrack, H30",p_holm,0.904750824
+TESTS,"F3: CSRT - KCF, H30",estimate,-39.65991042
+TESTS,"F3: CSRT - KCF, H30",median_diff,-0.935850685
+TESTS,"F3: CSRT - KCF, H30",ci95_low,-133.2600267
+TESTS,"F3: CSRT - KCF, H30",ci95_high,-5.525974171
+TESTS,"F3: CSRT - KCF, H30",p_raw,0.3488101959
+TESTS,"F3: CSRT - KCF, H30",p_holm,0.6976203918
+TESTS,"F3: CSRT - MOSSE, H30",estimate,-58.11102409
+TESTS,"F3: CSRT - MOSSE, H30",median_diff,0.843761165
+TESTS,"F3: CSRT - MOSSE, H30",ci95_low,-214.6559011
+TESTS,"F3: CSRT - MOSSE, H30",ci95_high,-7.367882848
+TESTS,"F3: CSRT - MOSSE, H30",p_raw,0.8123550415
+TESTS,"F3: CSRT - MOSSE, H30",p_holm,0.8123550415
+TESTS,"F3: CSRT - MedianFlow, H30",estimate,-22.41004419
+TESTS,"F3: CSRT - MedianFlow, H30",median_diff,-2.636930135
+TESTS,"F3: CSRT - MedianFlow, H30",ci95_low,-74.38319562
+TESTS,"F3: CSRT - MedianFlow, H30",ci95_high,-7.23353149
+TESTS,"F3: CSRT - MedianFlow, H30",p_raw,0.01923370361
+TESTS,"F3: CSRT - MedianFlow, H30",p_holm,0.05770111084
+TESTS,"F4: Damped - persistent, H30, BoT-SORT",estimate,-67.87559633
+TESTS,"F4: Damped - persistent, H30, BoT-SORT",median_diff,-19.69921497
+TESTS,"F4: Damped - persistent, H30, BoT-SORT",ci95_low,-130.2348782
+TESTS,"F4: Damped - persistent, H30, BoT-SORT",ci95_high,-36.65528735
+TESTS,"F4: Damped - persistent, H30, BoT-SORT",p_raw,4.768371582e-05
+TESTS,"F4: Damped - persistent, H30, BoT-SORT",p_holm,0.0002384185791
+TESTS,"F4: Damped - persistent, H30, DeepSORT",estimate,-90.72812276
+TESTS,"F4: Damped - persistent, H30, DeepSORT",median_diff,-23.06749337
+TESTS,"F4: Damped - persistent, H30, DeepSORT",ci95_low,-227.7931277
+TESTS,"F4: Damped - persistent, H30, DeepSORT",ci95_high,-42.22994026
+TESTS,"F4: Damped - persistent, H30, DeepSORT",p_raw,5.722045898e-06
+TESTS,"F4: Damped - persistent, H30, DeepSORT",p_holm,4.577636719e-05
+TESTS,"F4: Damped - persistent, H30, ByteTrack",estimate,-95.88912114
+TESTS,"F4: Damped - persistent, H30, ByteTrack",median_diff,-28.09811055
+TESTS,"F4: Damped - persistent, H30, ByteTrack",ci95_low,-244.2236993
+TESTS,"F4: Damped - persistent, H30, ByteTrack",ci95_high,-45.23171576
+TESTS,"F4: Damped - persistent, H30, ByteTrack",p_raw,3.814697266e-06
+TESTS,"F4: Damped - persistent, H30, ByteTrack",p_holm,3.433227539e-05
+TESTS,"F4: Damped - persistent, H30, OSTrack",estimate,-26.99171797
+TESTS,"F4: Damped - persistent, H30, OSTrack",median_diff,-9.12702647
+TESTS,"F4: Damped - persistent, H30, OSTrack",ci95_low,-52.57121929
+TESTS,"F4: Damped - persistent, H30, OSTrack",ci95_high,-12.62357688
+TESTS,"F4: Damped - persistent, H30, OSTrack",p_raw,0.001985549927
+TESTS,"F4: Damped - persistent, H30, OSTrack",p_holm,0.002864837646
+TESTS,"F4: Damped - persistent, H30, ODTrack",estimate,-26.64929113
+TESTS,"F4: Damped - persistent, H30, ODTrack",median_diff,-7.806072135
+TESTS,"F4: Damped - persistent, H30, ODTrack",ci95_low,-53.37326583
+TESTS,"F4: Damped - persistent, H30, ODTrack",ci95_high,-12.18367337
+TESTS,"F4: Damped - persistent, H30, ODTrack",p_raw,0.001432418823
+TESTS,"F4: Damped - persistent, H30, ODTrack",p_holm,0.002864837646
+TESTS,"F4: Damped - persistent, H30, CSRT",estimate,-28.66541271
+TESTS,"F4: Damped - persistent, H30, CSRT",median_diff,-12.65179821
+TESTS,"F4: Damped - persistent, H30, CSRT",ci95_low,-50.25451363
+TESTS,"F4: Damped - persistent, H30, CSRT",ci95_high,-15.38226298
+TESTS,"F4: Damped - persistent, H30, CSRT",p_raw,0.0003223419189
+TESTS,"F4: Damped - persistent, H30, CSRT",p_holm,0.0009670257568
+TESTS,"F4: Damped - persistent, H30, KCF",estimate,-42.63673611
+TESTS,"F4: Damped - persistent, H30, KCF",median_diff,-21.68998725
+TESTS,"F4: Damped - persistent, H30, KCF",ci95_low,-65.25721571
+TESTS,"F4: Damped - persistent, H30, KCF",ci95_high,-25.08277434
+TESTS,"F4: Damped - persistent, H30, KCF",p_raw,4.768371582e-05
+TESTS,"F4: Damped - persistent, H30, KCF",p_holm,0.0002384185791
+TESTS,"F4: Damped - persistent, H30, MOSSE",estimate,-58.82116622
+TESTS,"F4: Damped - persistent, H30, MOSSE",median_diff,-25.67832705
+TESTS,"F4: Damped - persistent, H30, MOSSE",ci95_low,-101.4813712
+TESTS,"F4: Damped - persistent, H30, MOSSE",ci95_high,-33.65757356
+TESTS,"F4: Damped - persistent, H30, MOSSE",p_raw,3.623962402e-05
+TESTS,"F4: Damped - persistent, H30, MOSSE",p_holm,0.0002174377441
+TESTS,"F4: Damped - persistent, H30, MedianFlow",estimate,-38.35884808
+TESTS,"F4: Damped - persistent, H30, MedianFlow",median_diff,-17.02303934
+TESTS,"F4: Damped - persistent, H30, MedianFlow",ci95_low,-59.69924556
+TESTS,"F4: Damped - persistent, H30, MedianFlow",ci95_high,-22.68668147
+TESTS,"F4: Damped - persistent, H30, MedianFlow",p_raw,2.670288086e-05
+TESTS,"F4: Damped - persistent, H30, MedianFlow",p_holm,0.000186920166

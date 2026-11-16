@@ -56,12 +56,12 @@ O TCC integra três trabalhos, cada um com seu repositório, e acrescenta a terc
 
 | Etapa | Cenário | Trabalho | Apresentação | Repositório | O que é próprio do TCC |
 |---|---|---|---|---|---|
-| 1 | Alvo único, visível (DUT Anti-UAV) | SIGE 2026 · [PDF](papers/sige2026_hybrid_architecture.pdf) | [YouTube, a partir de 21:00](https://www.youtube.com/live/RkG_wqfGN3A?t=1260s) | [hybrid-uav-tracking-prediction](https://github.com/IghorRibeiro/hybrid-uav-tracking-prediction) | Escolha do rastreador local pela predição; erro de predição com Kalman externo padronizado, persistente e amortecido; suporte comum; testes pareados |
+| 1 | Alvo único, visível (DUT Anti-UAV) | SIGE 2026 · [PDF no site do ITA](https://www.sige.ita.br/edicoes-anteriores/2026/TRABALHOS/Artigos-com-ISSN/arquitetura-hibrida-para-rastreamento-e-predicao-de-trajetoria-de-vants-baseada-em-visao-computacional-e-filtro-de-kalman.pdf?x15151) | [YouTube, a partir de 21:00](https://www.youtube.com/live/RkG_wqfGN3A?t=1260s) | [hybrid-uav-tracking-prediction](https://github.com/IghorRibeiro/hybrid-uav-tracking-prediction) | Escolha do rastreador local pela predição; erro de predição com Kalman externo padronizado, persistente e amortecido; suporte comum; testes pareados |
 | 2 | Enxames, infravermelho (Track 3) | LAFusion 2026 (Springer CCIS, a publicar) · [PDF](papers/lafusion2026_hit_tracker.pdf) | [YouTube, a partir de 49:16](https://www.youtube.com/live/BQAEXBXsOSE?t=2956s) | [DroneTrackingMOT](https://github.com/IghorRibeiro/DroneTrackingMOT), tag `v1.0-lafusion2026` | Arquitetura híbrida estendida a múltiplos alvos; custo por alvo (hipótese H4) |
 | Base de detecção | Detecção de objetos pequenos | WVC 2026 · [PDF](papers/wvc2026_maritime_sar.pdf) | — | [yolo26n-seadronessee-postprocessing](https://github.com/IghorRibeiro/yolo26n-seadronessee-postprocessing) | — |
 | 3 | Predição de trajetória nos dois cenários | Este TCC · [PDF](papers/tcc_ribeiro_2026.pdf) | — | este repositório | Protocolo de predição com identidade em enxames; hipóteses H1 a H4; figuras e tabelas do TCC |
 
-Os PDFs ficam em [`papers/`](papers/). As gravações das apresentações no SIGE e no LAFusion abrem no minuto em que cada
+Os PDFs ficam em [`papers/`](papers/); o do SIGE aponta para o site do ITA. As gravações das apresentações no SIGE e no LAFusion abrem no minuto em que cada
 apresentação começa.
 
 Estrutura: [`etapa1_alvo_unico/`](etapa1_alvo_unico/) e [`etapa2_enxames/`](etapa2_enxames/) apontam para os repositórios dos

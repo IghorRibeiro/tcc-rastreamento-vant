@@ -48,22 +48,25 @@ Três achados atravessam os dois cenários:
    (de 13,2% a 35,5%); no Track 3 não o reduziu em nenhum dos três rastreadores. Além disso, a preservação das identidades
    mostrou-se mais relevante para a classificação atribuída a cada alvo do que para a predição em si.
 
-O texto completo do TCC será vinculado aqui após a publicação pela instituição.
+O texto completo está em [`papers/tcc_ribeiro_2026.pdf`](papers/tcc_ribeiro_2026.pdf).
 
 ## Mapa dos trabalhos
 
 O TCC integra três trabalhos, cada um com seu repositório, e acrescenta a terceira etapa e as extensões descritas na última coluna.
 
-| Etapa | Cenário | Artigo | Repositório | O que é próprio do TCC |
-|---|---|---|---|---|
-| 1 | Alvo único, visível (DUT Anti-UAV) | SIGE 2026 | [hybrid-uav-tracking-prediction](https://github.com/IghorRibeiro/hybrid-uav-tracking-prediction) | Escolha do rastreador local pela predição; erro de predição com Kalman externo padronizado, persistente e amortecido; suporte comum; testes pareados |
-| 2 | Enxames, infravermelho (Track 3) | LAFusion 2026 (Springer CCIS, a publicar) | [DroneTrackingMOT](https://github.com/IghorRibeiro/DroneTrackingMOT), tag `v1.0-lafusion2026` | Arquitetura híbrida estendida a múltiplos alvos; custo por alvo (hipótese H4) |
-| Base de detecção | Detecção de objetos pequenos | WVC 2026 | [yolo26n-seadronessee-postprocessing](https://github.com/IghorRibeiro/yolo26n-seadronessee-postprocessing) | — |
-| 3 | Predição de trajetória nos dois cenários | Este TCC | este repositório | Protocolo de predição com identidade em enxames; hipóteses H1 a H4; figuras e tabelas do TCC |
+| Etapa | Cenário | Trabalho | Apresentação | Repositório | O que é próprio do TCC |
+|---|---|---|---|---|---|
+| 1 | Alvo único, visível (DUT Anti-UAV) | SIGE 2026 · [PDF](papers/sige2026_hybrid_architecture.pdf) | [YouTube, a partir de 21:00](https://www.youtube.com/live/RkG_wqfGN3A?t=1260s) | [hybrid-uav-tracking-prediction](https://github.com/IghorRibeiro/hybrid-uav-tracking-prediction) | Escolha do rastreador local pela predição; erro de predição com Kalman externo padronizado, persistente e amortecido; suporte comum; testes pareados |
+| 2 | Enxames, infravermelho (Track 3) | LAFusion 2026 (Springer CCIS, a publicar) · [PDF](papers/lafusion2026_hit_tracker.pdf) | [YouTube, a partir de 49:16](https://www.youtube.com/live/BQAEXBXsOSE?t=2956s) | [DroneTrackingMOT](https://github.com/IghorRibeiro/DroneTrackingMOT), tag `v1.0-lafusion2026` | Arquitetura híbrida estendida a múltiplos alvos; custo por alvo (hipótese H4) |
+| Base de detecção | Detecção de objetos pequenos | WVC 2026 · [PDF](papers/wvc2026_maritime_sar.pdf) | — | [yolo26n-seadronessee-postprocessing](https://github.com/IghorRibeiro/yolo26n-seadronessee-postprocessing) | — |
+| 3 | Predição de trajetória nos dois cenários | Este TCC · [PDF](papers/tcc_ribeiro_2026.pdf) | — | este repositório | Protocolo de predição com identidade em enxames; hipóteses H1 a H4; figuras e tabelas do TCC |
+
+Os PDFs ficam em [`papers/`](papers/). As gravações das apresentações no SIGE e no LAFusion abrem no minuto em que cada
+apresentação começa.
 
 Estrutura: [`etapa1_alvo_unico/`](etapa1_alvo_unico/) e [`etapa2_enxames/`](etapa2_enxames/) apontam para os repositórios dos
 artigos, sem duplicar código; [`etapa3_predicao/`](etapa3_predicao/) tem o código próprio; [`stats/`](stats/) os testes;
-[`figures/`](figures/) as figuras; [`results/`](results/) os resultados por sequência; [`configs/`](configs/) os parâmetros;
+[`papers/`](papers/) os PDFs; [`figures/`](figures/) as figuras; [`results/`](results/) os resultados por sequência; [`configs/`](configs/) os parâmetros;
 [`tests/`](tests/) os testes de unidade.
 
 ## Fluxo
